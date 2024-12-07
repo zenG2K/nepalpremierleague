@@ -6,9 +6,9 @@ import { ApiService } from '../../services/api.service';
   selector: 'app-live-match',
   imports: [],
   template: `
-    
-   <div class=" bg-gray-200 px-4 rounded-lg flex flex-col gap-1 h-auto py-2 ">
-     
+     @if(liveMatch().title){
+   <div class=" bg-gray-200 px-4 rounded-lg flex flex-col gap-1 h-auto py-2  ">
+   
     <!--top  -->
       <div class="flex flex-col w-full text-sm ">
         <div class="inline-flex gap-3 mt-2">
@@ -59,7 +59,7 @@ import { ApiService } from '../../services/api.service';
       <!-- buttom -->
 
       <div class="text-black font-mono text-sm flex flex-col gap-1">
-        <div class="flex justify-center border shadow-md rounded-xl bg-slate-200">
+        <div class="flex justify-center border shadow-lg rounded-xl bg-slate-200 px-2">
           <span>{{liveMatch().comment}}</span>
         </div>
        
@@ -70,8 +70,16 @@ import { ApiService } from '../../services/api.service';
           <span>{{liveMatch().entitle}}</span>
         </div>
       </div>
-
+    
    </div>
+  }@else{
+    <div class="flex justify-center items-center text-sm">
+       <p>Loading...</p>
+    </div>
+      
+    }
+
+   
   `,
   styles: ``
 })

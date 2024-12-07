@@ -21,4 +21,7 @@ export class ApiService {
   updatePoll(optionId: number, selection:string){
     return this.http.put<any>(this.url+`update-poll/${optionId}/${selection}`,{})
   }
+  getTeams() {
+    return this.http.get<any>(this.url + `teams`)
+  }
 }
