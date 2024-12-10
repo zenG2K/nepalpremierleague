@@ -7,7 +7,7 @@ import { basename } from 'path';
 })
 export class ApiService {
   http = inject(HttpClient)
-  url ='http://localhost:8080/api/v1/'
+  url ='https://api.watchnpl.live/api/v1/'
 
   constructor() { }
 
